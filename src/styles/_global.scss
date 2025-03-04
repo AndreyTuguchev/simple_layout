@@ -40,6 +40,41 @@ body{
 
 
 
+
+.main{
+    display: grid;
+    gap: 40px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto auto auto;
+    max-width: $content-max-width;
+    margin: auto;
+}
+
+.main > section{
+    height: 100%;
+}
+
+.main > section:first-child,
+.main > section:last-child{
+    font-size: $font-size-section-title;
+    grid-column: span 2;
+}
+
+.main > section:not(:first-child):not(:last-child){
+    font-size: $font-size-section-middle-title;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 .section{
     position: relative;
     overflow: hidden;
@@ -63,7 +98,6 @@ body{
         max-width: $content-max-width;
         margin: auto;
         align-items: center;
-        // max-height: 490px;
         height: 100%;
     }
 
@@ -73,6 +107,7 @@ body{
         margin-bottom: 40px;
     }
 
+
     &__hover::after {
         z-index: 0;
         content: "";
@@ -81,9 +116,13 @@ body{
         left: 0;
         width: 100%;
         height: 100%;
-        background: rgba(0, 0, 0, 0.5); // Dark overlay
+        background: rgba(0, 0, 0, 0.5);
     }
 
+    & h1{
+        font-size: $font-size-xxl;
+        margin: 0;
+    }
 }
 
 
@@ -172,6 +211,7 @@ body{
 
 
 
+
 @media (max-width: 1140px) { 
 
     .hero{
@@ -192,6 +232,37 @@ body{
                 font-size: 1.4rem;
             }
         }    
+    }
+
+    .section h1{
+      padding-left: 30px;
+      font-size: 1.5rem;
+    }
+
+    .main{
+        gap: 30px;
+        padding: 0 30px;
+        
+        & > section:first-child,
+        & > section:last-child{
+            grid-column: span 1;
+        }
+
+        & > section,
+        & > section{
+            .text-wrap{
+                &__title{
+                    font-size: 2.5rem;
+                }
+            
+                &__subtitle{
+                    font-size: 1rem;
+                }
+            }
+            .button {
+                font-size: 1rem;
+            }
+        }
     }
 
     .section{
@@ -215,14 +286,12 @@ body{
             margin-top: 55px;
             margin-bottom: 30px;
         }
-
     }
 
     .button{
         padding-top: 7px;
         padding-bottom: 7px;
     }
-
 }
 
 
@@ -239,12 +308,10 @@ body{
             margin-left: 20px;
         }
 
-
         #root &.hero &__item{
             padding-top: unset;
             padding-bottom: 40px;
         }
-
 
         &.hero &-inner{
             display: inline-block;
@@ -267,9 +334,22 @@ body{
             
         }
 
+        & h1{
+            font-size: 1rem;
+        }
+
     }
 
+    .main{
+        gap: 30px;
+        padding: 0 30px;
+        
+        #root & > .section{
+            grid-column: span 2;
+        }
+    }
 }
+
 
 @media (min-width: 768px) { 
     .section{
