@@ -9,12 +9,15 @@ import space_bg_4 from './assets/images/space-bg-4.jpg';
 import './App.css';
 import SectionItem from './components/SectionItem';
 import SectionContext from './components/SectionContext';
+import Header from './components/Header';
 
 function App() {
   return (
     <>
     <div className="App">
-   
+    
+    <Header />
+    
     <section className='section hero section__hover' style={{backgroundImage: `url(${hero_bg_md})`}}>
       <div className='section-inner '>
         <div className='hero-image'>
