@@ -565,13 +565,15 @@ header{
         }
 
 
-        &__link.cart img{
+        &__link.cart img,
+        &__link.cart svg{
             display: none;
         }
 
         &__link.cart::after{
             content: "Cart";
             position: relative;
+            -webkit-text-fill-color: $clr-primary;
         }
     }
 }

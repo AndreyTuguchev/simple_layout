@@ -32,11 +32,11 @@ const SectionItem = () => {
                 setIsIntersacting(true)
             }
         });
-        
+    
         if (sectiomItemRef.current) observer.observe(sectiomItemRef.current);
 
         return () => {
-        if (sectiomItemRef.current) observer.unobserve(sectiomItemRef.current);
+            if (sectiomItemRef.current) observer.unobserve(sectiomItemRef.current);
         };
     },[])
         
