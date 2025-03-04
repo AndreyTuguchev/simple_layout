@@ -25,6 +25,10 @@ body{
     background: linear-gradient(235deg, rgba(13,30,72,1) 0%, rgba(48,69,113,1) 100%);
 }
 
+#root .lz-background{
+    background-image: unset !important;
+}
+
 .w-full{
     width: 100%;
 }
